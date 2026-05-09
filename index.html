@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcolo Guadagno</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#f2f2f2;
+margin:0;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+width:300px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+box-sizing:border-box;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#007AFF;
+color:white;
+font-size:16px;
+}
+
+#risultato{
+margin-top:15px;
+font-weight:bold;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Calcolo Guadagno</h2>
+
+<input type="number" id="aquisto" placeholder="Prezzo di acquisto">
+
+<input type="number" id="vendita" placeholder="Prezzo di vendita">
+
+<input type="number" id="investiti" placeholder="Soldi investiti">
+
+<button onclick="calcola()">Calcola</button>
+
+<div id="risultato"></div>
+</div>
+
+<script>
+function calcola() {
+let aquisto = Number(document.getElementById("aquisto").value);
+let vendita = Number(document.getElementById("vendita").value);
+let investiti = Number(document.getElementById("investiti").value);
+
+let guadagno = (vendita * investiti) / aquisto;
+
+document.getElementById("risultato").innerText =
+"Il guadagno è di: " + guadagno.toFixed(2) + " €";
+}
+</script>
+
+</body>
+</html>
